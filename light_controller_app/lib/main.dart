@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:light_controller_app/pages/flash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,27 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const FlashPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Sign In"),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
