@@ -36,6 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   velocity_x: ^3.4.0
   flutter_native_splash: ^2.2.1
+  firebase_auth: ^3.3.18
+  firebase_core: ^1.17.0
+  fluttertoast: ^8.0.9
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

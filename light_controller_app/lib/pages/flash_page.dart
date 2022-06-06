@@ -1,4 +1,6 @@
 // ignore_for_file: file_names
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:light_controller_app/pages/home_page.dart';
 import 'package:light_controller_app/pages/login_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +46,21 @@ class _FlashPageState extends State<FlashPage> {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32),
-                            side: const BorderSide(
-                                color: Colors.black, width: 3)))),
+                        )
+                      )
+                    ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                  if(FirebaseAuth.instance.currentUser != null){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  }
                 },
                 child: const Text(
                   'Log In',
@@ -71,8 +84,9 @@ class _FlashPageState extends State<FlashPage> {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32),
-                            side: const BorderSide(
-                                color: Colors.black, width: 3)))),
+                        )
+                    )
+                ),
                 onPressed: () {},
                 child: const Text(
                   'Learn More',
